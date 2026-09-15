@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Restaurante El Cisne</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <div class="bg-brand-brown text-white py-2 px-4 text-center text-sm font-semibold">
+        <i class="fa-solid fa-motorcycle mr-2"></i> ¡DOMICILIO GRATIS! - Pide por WhatsApp: 320 419 8609
+    </div>
+
+    <!-- Navegación -->
+    <header>
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<div class="container mx-auto px-6 py-6 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+        <img src="imagenes/logoparapagweb.png" alt="El Cisne" class="h-20 max-h-20 w-auto object-contain" />
+
+</div>
+            <nav class="hidden md:flex space-x-6 font-medium text-gray-700">
+                <a href="index.html" class="hover:text-brand-brown transition">Inicio</a>
+                <a href="catalogo.html" class="hover:text-brand-brown transition">Menú Completo</a>
+                <a href="contacto.html" class="text-brand-brown font-bold">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido de Contacto -->
+    <div class="container mx-auto px-4 py-12">
+        <h1 class="text-3xl font-extrabold text-brand-brown mb-6 text-center">Contáctanos y Haz Tu Pedido</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="contact-card p-8 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-brand-brown mb-4">Información de Atención</h2>
+                    <p class="text-gray-600 mb-6">Estamos listos para atenderte con el mejor servicio y entregas rápidas hasta la puerta de tu hogar.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone text-brand-orange text-xl"></i>
+                            <div>
+                                <p class="font-bold">Líneas WhatsApp directas:</p>
+                                <p class="text-gray-600">320 419 8609 / 320 406 5469</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-motorcycle text-brand-orange text-xl"></i>
+                            <div>
+                                <p class="font-bold">Cobertura:</p>
+                                <p class="text-gray-600">¡Domicilio Gratis en toda la zona urbana!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-clock text-brand-orange text-xl"></i>
+                            <div>
+                                <p class="font-bold">Horarios:</p>
+                                <p class="text-gray-600">Lunes a Domingo: 11:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/573204198609" target="_blank" class="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-3 px-4 rounded-xl text-center shadow transition flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Escribir por WhatsApp Ahora</span>
+                </a>
+            </div>
+
+            <div class="contact-card p-8">
+                <h2 class="text-2xl font-bold text-brand-brown mb-4">Envíanos un Mensaje</h2>
+                <form id="contact-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Nombre Completo</label>
+                        <input type="text" required class="w-full border rounded-lg p-3 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Teléfono o WhatsApp</label>
+                        <input type="tel" required class="w-full border rounded-lg p-3 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Mensaje o Pedido Especial</label>
+                        <textarea rows="4" required class="w-full border rounded-lg p-3 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-orange"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-brown hover:bg-opacity-90 text-white font-bold py-3 rounded-lg shadow transition">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante El Cisne - ¡Buen sabor, siempre!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <div class="bg-brand-brown text-white py-2 px-4 text-center text-sm font-semibold">
+        <i class="fa-solid fa-motorcycle mr-2"></i> ¡DOMICILIO GRATIS! - Pide por WhatsApp: 320 419 8609
+    </div>
+
+    <!-- Navegación -->
+    <header>
+<div class="container mx-auto px-6 py-6 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+        <img src="imagenes/logoparapagweb.png" alt="El Cisne" class="h-20 max-h-20 w-auto object-contain" />
+
+</div>
+            <nav class="hidden md:flex space-x-6 font-medium text-gray-700">
+                <a href="index.html" class="text-brand-brown font-bold">Inicio</a>
+                <a href="catalogo.html" class="hover:text-brand-brown transition">Menú Completo</a>
+                <a href="contacto.html" class="hover:text-brand-brown transition">Contacto</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="catalogo.html" class="bg-brand-orange hover:bg-opacity-90 text-white px-4 py-2 rounded-full font-bold shadow transition flex items-center">
+                    <i class="fa-solid fa-cart-shopping mr-2"></i> Pedir (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-[450px] flex items-center justify-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1200&q=80');">
+        <div class="text-center text-white px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-md">¡Buenos Días! Menú Para Hoy</h1>
+            <p class="text-xl md:text-2xl mb-6 font-light">Disfruta del mejor sazón tradicional con servicio a domicilio gratis.</p>
+            <a href="catalogo.html" class="bg-brand-orange hover:bg-opacity-90 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg transition">Ver Menú y Precios</a>
+        </div>
+    </section>
+
+    <!-- Destacados / Hoy en El Cisne -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center text-brand-brown mb-8">⭐ Platos Destacados de Hoy</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-orange-100 flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80" alt="Bandeja Paisa" class="h-48 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Bandeja Paisa</h3>
+                    <p class="text-sm text-gray-500 mb-3">Frijoles, arroz, carne, chicharrón, huevo, aguacate y arepa.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-extrabold text-brand-orange">$14.000</span>
+                        <button onclick="addItemToCart('Bandeja Paisa', 14000)" class="bg-gray-100 hover:bg-brand-brown hover:text-white text-gray-800 px-3 py-1 rounded text-sm font-semibold transition">Pedir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-orange-100 flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=500&q=80" alt="Ajiaco" class="h-48 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Ajiaco con Pollo</h3>
+                    <p class="text-sm text-gray-500 mb-3">Acompañado de pierna pernil sudada, arroz, aguacate y bebida.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-extrabold text-brand-orange">$16.000</span>
+                        <button onclick="addItemToCart('Ajiaco con Pollo', 16000)" class="bg-gray-100 hover:bg-brand-brown hover:text-white text-gray-800 px-3 py-1 rounded text-sm font-semibold transition">Pedir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-orange-100 flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80" alt="Churrasco" class="h-48 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Churrasco</h3>
+                    <p class="text-sm text-gray-500 mb-3">Corte especial a la parrilla con papas y ensalada fresca.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-extrabold text-brand-orange">$21.000</span>
+                        <button onclick="addItemToCart('Churrasco', 21000)" class="bg-gray-100 hover:bg-brand-brown hover:text-white text-gray-800 px-3 py-1 rounded text-sm font-semibold transition">Pedir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-orange-100 flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=500&q=80" alt="Mojarra" class="h-48 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Mojarra 1 LB</h3>
+                    <p class="text-sm text-gray-500 mb-3">Mojarra frita crujiente con patacón, arroz y ensalada.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-extrabold text-brand-orange">$21.000</span>
+                        <button onclick="addItemToCart('Mojarra 1 LB', 21000)" class="bg-gray-100 hover:bg-brand-brown hover:text-white text-gray-800 px-3 py-1 rounded text-sm font-semibold transition">Pedir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Almuerzo Corriente Banner -->
+    <section class="bg-[#F39C12] py-10 my-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-white">
+            <div class="mb-6 md:mb-0">
+                <span class="bg-brand-brown text-xs font-bold uppercase px-3 py-1 rounded-full">Económico y delicioso</span>
+                <h2 class="text-3xl font-extrabold mt-2">Almuerzo Corriente por solo $11.500</h2>
+                <p class="mt-1 text-lg">Incluye: Sopa + Proteína + Principio + Arroz + Ensalada + Limonada.</p>
+            </div>
+            <a href="catalogo.html" class="bg-white text-brand-brown hover:bg-gray-100 px-6 py-3 rounded-full font-bold shadow-lg text-lg transition">Armar Mi Almuerzo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-10 pb-6">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <h3 class="text-xl font-bold mb-3">🦢 Restaurante El Cisne</h3>
+                <p class="text-gray-300 text-sm">¡Buen sabor, siempre! Ofrecemos la mejor comida tradicional colombiana directamente a la puerta de tu casa.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-3">Contacto Directo</h3>
+                <p class="text-gray-300 text-sm mb-2"><i class="fa-solid fa-phone mr-2"></i> 320 419 8609 / 320 406 5469</p>
+                <p class="text-gray-300 text-sm"><i class="fa-solid fa-location-dot mr-2"></i> Servicio a domicilio gratis</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-3">Navegación</h3>
+                <ul class="space-y-1 text-sm text-gray-300">
+                    <li><a href="index.html" class="hover:underline">Inicio</a></li>
+                    <li><a href="catalogo.html" class="hover:underline">Catálogo / Menú</a></li>
+                    <li><a href="contacto.html" class="hover:underline">Contacto y Ubicación</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 pt-4 text-center text-xs text-gray-400">
+            &copy; 2026 Restaurante El Cisne. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Completo - Restaurante El Cisne</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <div class="bg-brand-brown text-white py-2 px-4 text-center text-sm font-semibold">
+        <i class="fa-solid fa-motorcycle mr-2"></i> ¡DOMICILIO GRATIS! - Pide por WhatsApp: 320 419 8609
+    </div>
+
+    <!-- Navegación -->
+    <header>
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<div class="container mx-auto px-6 py-6 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+        <img src="imagenes/logoparapagweb.png" alt="El Cisne" class="h-20 max-h-20 w-auto object-contain" />
+
+</div>
+            <nav class="hidden md:flex space-x-6 font-medium text-gray-700">
+                <a href="index.html" class="hover:text-brand-brown transition">Inicio</a>
+                <a href="catalogo.html" class="text-brand-brown font-bold">Menú Completo</a>
+                <a href="contacto.html" class="hover:text-brand-brown transition">Contacto</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button onclick="alert('Tu carrito cuenta con ' + JSON.parse(localStorage.getItem('el_cisne_cart') || '[]').length + ' productos.')" class="bg-brand-orange text-white px-4 py-2 rounded-full font-bold shadow transition flex items-center">
+                    <i class="fa-solid fa-cart-shopping mr-2"></i> <span id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido del Menú -->
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-extrabold text-brand-brown mb-2 text-center">Nuestro Menú del Día</h1>
+        <p class="text-center text-gray-600 mb-8">Elige tu plato favorito, arma tu almuerzo corriente o selecciona especialidades.</p>
+
+        <!-- Configurador Almuerzo Corriente -->
+        <div class="configurator-card mb-12">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-brand-brown"><i class="fa-solid fa-utensils mr-2"></i> Almuerzo Corriente (Arma tu plato)</h2>
+                <span class="text-2xl font-extrabold text-brand-orange">$11.500</span>
+            </div>
+            <p class="text-sm text-gray-500 mb-4">Incluye: sopa + proteína + principio + arroz + ensalada + limonada.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <div>
+                    <label class="block font-semibold text-sm mb-1">1. Sopa del Día</label>
+                    <select id="sopa" class="w-full border rounded-lg p-2 bg-gray-50">
+                        <option>Sopa de Arroz</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold text-sm mb-1">2. Principio</label>
+                    <select id="principio" class="w-full border rounded-lg p-2 bg-gray-50">
+                        <option>Fríjol</option>
+                        <option>Garbanzo</option>
+                        <option>Pepino</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold text-sm mb-1">3. Proteína</label>
+                    <select id="proteina" class="w-full border rounded-lg p-2 bg-gray-50">
+                        <option>Lomo asado</option>
+                        <option>Ternera</option>
+                        <option>Pollo frito</option>
+                        <option>Pollo sudado</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="agregarAlmuerzoCorriente()" class="w-full bg-brand-orange hover:bg-opacity-90 text-white font-bold py-3 rounded-lg shadow transition">
+                Agregar Almuerzo Corriente ($11.500)
+            </button>
+        </div>
+
+        <!-- Platos Especiales -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold text-brand-brown mb-6 border-b pb-2">🔥 Platos Especiales y Ajiaco</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="menu-item-card p-4 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg">Churrasco</h3>
+                        <p class="text-sm text-gray-500 mt-1">Carne jugosa a la parrilla con acompañamientos.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-brand-orange">$21.000</span>
+                        <button onclick="addItemToCart('Churrasco', 21000)" class="bg-brand-brown text-white px-3 py-1 rounded text-sm hover:bg-opacity-90">Pedir</button>
+                    </div>
+                </div>
+                <div class="menu-item-card p-4 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg">Churrasquito</h3>
+                        <p class="text-sm text-gray-500 mt-1">Porción personal de churrasco tradicional.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-brand-orange">$16.000</span>
+                        <button onclick="addItemToCart('Churrasquito', 16000)" class="bg-brand-brown text-white px-3 py-1 rounded text-sm hover:bg-opacity-90">Pedir</button>
+                    </div>
+                </div>
+                <div class="menu-item-card p-4 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg">Mojarra 1 LB</h3>
+                        <p class="text-sm text-gray-500 mt-1">Pescado fresco frito con patacón y arroz.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-brand-orange">$21.000</span>
+                        <button onclick="addItemToCart('Mojarra 1 LB', 21000)" class="bg-brand-brown text-white px-3 py-1 rounded text-sm hover:bg-opacity-90">Pedir</button>
+                    </div>
+                </div>
+                <div class="menu-item-card p-4 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg">Ajiaco con Pollo</h3>
+                        <p class="text-sm text-gray-500 mt-1">Sopa tradicional con pierna pernil, arroz, aguacate.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-brand-orange">$16.000</span>
+                        <button onclick="addItemToCart('Ajiaco con Pollo', 16000)" class="bg-brand-brown text-white px-3 py-1 rounded text-sm hover:bg-opacity-90">Pedir</button>
+                    </div>
+                </div>
+                <div class="menu-item-card p-4 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg">Bandeja Paisa</h3>
+                        <p class="text-sm text-gray-500 mt-1">Frijoles, arroz, carne, chicharrón, huevo, aguacate.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-brand-orange">$14.000</span>
+                        <button onclick="addItemToCart('Bandeja Paisa', 14000)" class="bg-brand-brown text-white px-3 py-1 rounded text-sm hover:bg-opacity-90">Pedir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platos Ejecutivos -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold text-brand-brown mb-6 border-b pb-2">🍽️ Platos Ejecutivos ($15.000 c/u)</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+                    <span class="text-sm font-semibold">Carne asada</span>
+                    <button onclick="addItemToCart('Ejecutivo: Carne asada', 15000)" class="bg-brand-orange text-white px-2 py-1 rounded text-xs">+</button>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+                    <span class="text-sm font-semibold">Costilla de cerdo frita</span>
+                    <button onclick="addItemToCart('Ejecutivo: Costilla frita', 15000)" class="bg-brand-orange text-white px-2 py-1 rounded text-xs">+</button>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+                    <span class="text-sm font-semibold">Costilla de cerdo BBQ</span>
+                    <button onclick="addItemToCart('Ejecutivo: Costilla BBQ', 15000)" class="bg-brand-orange text-white px-2 py-1 rounded text-xs">+</button>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+                    <span class="text-sm font-semibold">Pierna pernil frita</span>
+                    <button onclick="addItemToCart('Ejecutivo: Pernil frito', 15000)" class="bg-brand-orange text-white px-2 py-1 rounded text-xs">+</button>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+                    <span class="text-sm font-semibold">Milanesa de pechuga</span>
+                    <button onclick="addItemToCart('Ejecutivo: Milanesa', 15000)" class="bg-brand-orange text-white px-2 py-1 rounded text-xs">+</button>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+                    <span class="text-sm font-semibold">Pechuga a la plancha</span>
+                    <button onclick="addItemToCart('Ejecutivo: Pechuga plancha', 15000)" class="bg-brand-orange text-white px-2 py-1 rounded text-xs">+</button>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+                    <span class="text-sm font-semibold">Pierna pernil sudada</span>
+                    <button onclick="addItemToCart('Ejecutivo: Pernil sudado', 15000)" class="bg-brand-orange text-white px-2 py-1 rounded text-xs">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/catalogo.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    background-color: #FAF7F2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2D2D2D;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-brand-brown { background-color: #6B2D0C; }
+.text-brand-brown { color: #6B2D0C; }
+.bg-brand-orange { background-color: #E67E22; }
+.text-brand-orange { color: #E67E22; }
+.bg-brand-dark { background-color: #4A1E08; }
+
+header {
+    background: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+footer {
+    background-color: #4A1E08;
+    color: #ffffff;
+}
